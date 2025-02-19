@@ -18,3 +18,11 @@
         </div>
     </section>
 @endsection
+
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            alert('This script is a About Page');
+        })
+    </script>
+@endpush
