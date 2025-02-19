@@ -6,14 +6,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/contact', function () {
-    $title = 'Contact!';
-    $description = ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium at labore sapiente. Culpa amet velit deserunt
-    hic iusto ab numquam enim expedita in optio? Quam dicta rerum numquam dolorem distinctio?!';
-
-    $books = ['Deep work', 'Steal Like a Artists', 'Story Brand'];
-    return view('contact.index', ['title' => $title, 'description' => $description, 'books' => $books]);
+Route::get('/about', function () {
+    return view('about');
 });
+
+// Route::get('/contact', function () {
+//     $title = 'Contact!';
+//     $description = ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium at labore sapiente. Culpa amet velit deserunt
+//     hic iusto ab numquam enim expedita in optio? Quam dicta rerum numquam dolorem distinctio?!';
+
+//     $books = ['Deep work', 'Steal Like a Artists', 'Story Brand'];
+//     return view('contact.index', ['title' => $title, 'description' => $description, 'books' => $books]);
+// });
 
 
 // Route::group([], function () {
