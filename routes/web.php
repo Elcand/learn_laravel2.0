@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SingleActionController;
 use Illuminate\Support\Facades\Route;
@@ -9,6 +10,21 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [HomeController::class, 'about']);
 
 Route::get('/single-action', SingleActionController::class);
+
+Route::resource('/blog', BlogController::class);
+
+// Route::prefix('blog')->group(function () {
+
+//     Route::get('/create', function () { // Route::get('/create', [BlogController::class, 'create']);
+//         return 'Create Blog Page';
+//     });
+//     Route::get('/show', function () {
+//         return 'Show Blog Page';
+//     });
+//     Route::get('/edit', function () {
+//         return 'Edit Blog Page';
+//     });
+// });
 
 // Route::get('/contact', function () {
 //     $title = 'Contact!';
