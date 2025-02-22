@@ -1,9 +1,10 @@
 <?php
 
+use App\Models\Blog;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SingleActionController;
-use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 
@@ -11,7 +12,13 @@ Route::get('/about', [HomeController::class, 'about']);
 
 Route::get('/single-action', SingleActionController::class);
 
-Route::resource('/blog', BlogController::class);
+// Route::resource('/blog', BlogController::class);
+Route::get('/blog', function () {
+    $blogs = Blog::all();
+    dd($blogs);
+});
+
+
 
 // Route::prefix('blog')->group(function () {
 
