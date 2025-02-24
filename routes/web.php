@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Blog;
+use App\Models\MyBlog;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
@@ -14,7 +14,7 @@ Route::get('/single-action', SingleActionController::class);
 
 // Route::resource('/blog', BlogController::class);
 Route::get('/blog', function () {
-    $blogs = Blog::all();
+    $blogs = MyBlog::all();
     dd($blogs);
 });
 
