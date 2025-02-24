@@ -15,7 +15,7 @@ Route::get('/single-action', SingleActionController::class);
 // Route::resource('/blog', BlogController::class);
 Route::get('/blog', function () {
     $blogs = MyBlog::all();
-    dd($blogs);
+    // dd($blogs);
 });
 
 
