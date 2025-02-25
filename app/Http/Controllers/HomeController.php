@@ -24,6 +24,19 @@ class HomeController extends Controller
         // $products->description = 'Buku';
         // $products->price = '75000';
         // $products->save();
+
+        // //read data from db
+        // // $users = User::where('id', '3',)->first(); / opsi 1
+        // $users = User::find(3); // opsi 2
+        // dd($users);
+
+        // // update data in db
+        // $user = User::where('id', 1)->first();
+        // $user->name = 'Joni :)';
+        // $user->email = 'jonijoni@gmail.com';
+        // $user->save();
+        // // dd($user);
+
         return view('home');
     }
 
