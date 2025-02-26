@@ -12,36 +12,25 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // //create data
-        // $user = new User(); // contoh 1
-        // $user->name = 'Coki pardede';
-        // $user->email = 'coki.pardede@gmail.com';
-        // $user->password = 'password';
-        // $user->save();
+        // create a new user
+        // User::create([ //opsi 1
+        //     'name' => 'Harry Maguire',
+        //     'email' => 'harry@gmail.com',
+        //     'password' => bcrypt('password'),
+        // ]);
 
-        // $products = new Product(); // contoh 2
-        // $products->name = 'Make Time';
-        // $products->description = 'Buku';
-        // $products->price = '75000';
-        // $products->save();
-
-        // //read data from db
-        // // $users = User::where('id', '3',)->first(); / opsi 1
-        // $users = User::find(3); // opsi 2
-        // dd($users);
-
-        // // update data in db
-        // $user = User::where('id', 1)->first();
-        // $user->name = 'Joni :)';
-        // $user->email = 'jonijoni@gmail.com';
-        // $user->save();
-        // // dd($user);
-
-        //delete data
-        $user = User::findOrFail(1);
-        $user->delete();
-        dd($user);
-
+        User::insert([ //opsi 2
+            [
+                'name' => 'Horry',
+                'email' => 'horry@gmail.com',
+                'password' => bcrypt('password'),
+            ],
+            [
+                'name' => 'Herra',
+                'email' => 'herra@gmail.com',
+                'password' => bcrypt('password'),
+            ]
+        ]);
         return view('home');
     }
 
