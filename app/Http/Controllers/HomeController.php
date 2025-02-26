@@ -37,6 +37,11 @@ class HomeController extends Controller
         // $user->save();
         // // dd($user);
 
+        //delete data
+        $user = User::findOrFail(1);
+        $user->delete();
+        dd($user);
+
         return view('home');
     }
 
