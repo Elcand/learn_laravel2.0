@@ -12,25 +12,12 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // create a new user
-        // User::create([ //opsi 1
-        //     'name' => 'Harry Maguire',
-        //     'email' => 'harry@gmail.com',
-        //     'password' => bcrypt('password'),
-        // ]);
 
-        User::insert([ //opsi 2
-            [
-                'name' => 'Horry',
-                'email' => 'horry@gmail.com',
-                'password' => bcrypt('password'),
-            ],
-            [
-                'name' => 'Herra',
-                'email' => 'herra@gmail.com',
-                'password' => bcrypt('password'),
-            ]
-        ]);
+        // $product = Product::where(['id' => 3, 'price' => 261])->get();
+        // $product = Product::where('name', 'LIKE', '%Make%')->orWhere('description', 'LIKE', '%Blanditiis%')->get();
+        // $product = Product::whereIn('id', [1, 2,])->get();
+        $product = Product::whereBetween('price', [100, 300])->get();
+        dd($product);
         return view('home');
     }
 
