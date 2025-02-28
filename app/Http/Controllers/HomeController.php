@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MyBlog;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
@@ -12,12 +13,12 @@ class HomeController extends Controller
 {
     public function index()
     {
+        // Product::find(1)->delete();
+        // $products = Product::withTrashed()->find(1); // jika ini mencari data yg udah dihapus
+        $products = Product::onlyTrashed()->get();
 
-        // $product = Product::where(['id' => 3, 'price' => 261])->get();
-        // $product = Product::where('name', 'LIKE', '%Make%')->orWhere('description', 'LIKE', '%Blanditiis%')->get();
-        // $product = Product::whereIn('id', [1, 2,])->get();
-        $product = Product::whereBetween('price', [100, 300])->get();
-        dd($product);
+        dd($products);
+
         return view('home');
     }
 
