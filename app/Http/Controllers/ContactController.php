@@ -13,6 +13,11 @@ class ContactController extends Controller
 
     public function contactSubmit(Request $request)
     {
-        dd($request()->all());
+        $request->validate([
+            'name'      => 'required|max:20|min:2',
+            'email'     => 'required|email',
+            'subject'   => 'required',
+            'message'   => 'required'
+        ]);
     }
 }
