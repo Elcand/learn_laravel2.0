@@ -4,7 +4,7 @@
 
 @section('contents')
     <section>
-        <div class="row justify-content-center  ">
+        <div class="row justify-content-center">
             <div class="col-md-6">
                 @if ($errors->any())
                     <div class="mt-4">
