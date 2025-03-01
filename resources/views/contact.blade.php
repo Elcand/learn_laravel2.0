@@ -8,7 +8,8 @@
             <div class="col-md-6">
                 <div class="card mt-5 mb-5">
                     <div class="card-body">
-                        <form>
+                        <form action="{{ route('contact.submit') }}" method="POST">
+                            @csrf
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
                                 <input type="text" class="form-control" id="name">
@@ -23,7 +24,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="message" class="form-label">Message</label>
-                                <input type="text" class="form-control" id="message">
+                                <textarea type="text" class="form-control" id="message"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>

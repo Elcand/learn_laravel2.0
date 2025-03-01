@@ -10,3 +10,4 @@ use App\Http\Controllers\SingleActionController;
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::post('/contact', [ContactController::class, 'contactSubmit'])->name('contact.submit');
