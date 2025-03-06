@@ -18,11 +18,14 @@ class FileUploadController extends Controller
         // $file->delete(); // ini
 
         $files = File::all();
-        return view('file-upload', compact('file', 'files'));
+        return view('file-upload', compact('files'));
     }
 
     public function store(Request $request)
     {
+        $request->validate([
+            'file' => 'required|mimes:jpg,jpeg,png|max:2048' // 2MB
+        ]);
         // $file = Storage::disk('local')->put('/', $request->file('file'));
         // $file = $request->file('file')->store('/', 'local');
         // $file = $request->file('file')->store('/', 'dir_public');

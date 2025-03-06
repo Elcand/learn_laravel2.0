@@ -13,6 +13,9 @@
                             <label for="" class="form-label">File Upload</label>
                             <input type="file" class="form-control" id="file" name="file" placeholder="Input file"
                                 value="{{ old('file') }}">
+                            @error('file')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <button type="submit" class="btn btn-dark">Submit</button>
                     </form>
