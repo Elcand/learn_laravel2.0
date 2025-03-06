@@ -3,16 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\File;
+use Illuminate\Foundation\Exceptions\Handler;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File as HandleFile;
 
 class FileUploadController extends Controller
 {
     public function index()
     {
+        // $file = File::find(3);
+        // HandleFile::delete(public_path($file->file_path));
+        // $file->delete(); // ini
+
         $files = File::all();
-        return view('file-upload', compact('files'));
+        return view('file-upload', compact('file', 'files'));
     }
 
     public function store(Request $request)
